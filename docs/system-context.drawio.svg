@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="5.0" etag="xxx" version="22.1.16" type="device">
+  <diagram name="System Context" id="system-context">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Weather Simulator -->
+        <mxCell id="simulator" value="Weather Simulator&#xa;(WebSocket Server)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontColor=#1976d2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Backend -->
+        <mxCell id="backend" value="Backend&#xa;Node.js, Express, Apollo&#xa;WebSocket Client, Event Processors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#f57c00;fontColor=#f57c00;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="200" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- MongoDB -->
+        <mxCell id="mongodb" value="MongoDB&#xa;Weather Data Storage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#388e3c;fontColor=#388e3c;" vertex="1" parent="1">
+          <mxGeometry x="280" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Frontend -->
+        <mxCell id="frontend" value="Frontend&#xa;React, Apollo Client&#xa;ApexCharts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c2185b;fontColor=#c2185b;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections -->
+        <!-- Simulator to Backend -->
+        <mxCell id="edge1" value="WebSocket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1976d2;" edge="1" parent="1" source="simulator" target="backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Backend to MongoDB -->
+        <mxCell id="edge2" value="Store Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;" edge="1" parent="1" source="backend" target="mongodb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Backend to Frontend -->
+        <mxCell id="edge3" value="GraphQL API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#c2185b;" edge="1" parent="1" source="backend" target="frontend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- MongoDB to Backend -->
+        <mxCell id="edge4" value="Query Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#388e3c;" edge="1" parent="1" source="mongodb" target="backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
